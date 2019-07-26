@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=1.0
+Name=Browser Chooser
+Comment=Choose a browser to open
+GenericName=Web Browser Chooser
+Keywords=Internet;WWW;Browser;Web;Explorer
+Exec=/home/mmclar/projects/browser-chooser/browser-chooser.sh %u
+Terminal=true
+X-MultipleArgs=false
+Type=Application
+Icon=/home/mmclar/projects/browser-chooser/browser-chooser.png
+Categories=GNOME;GTK;Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
+StartupNotify=true
+#Actions=new-window;new-private-window;
+#X-Desktop-File-Install-Version=0.23
