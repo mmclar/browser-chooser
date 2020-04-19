@@ -1,10 +1,8 @@
-input()
 import sys
 import readchar
 import subprocess
 
 print('Choose which browser you want to use for this link: (f)irefox or (c)hromium.')
-input()
 url = sys.argv[1]
 print(url)
 
@@ -14,6 +12,6 @@ executable = {
     'f': 'firefox',
     'c': 'chromium-browser',
 }[char]
-subprocess.Popen([executable, url])
-input()
-
+subprocess.Popen(['nohup', executable, url],
+         stdout=subprocess.PIPE,
+         stderr=subprocess.STDOUT)
