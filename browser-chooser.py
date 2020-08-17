@@ -10,7 +10,7 @@ char = readchar.readchar()
 print(char)
 executable = {
     'f': 'firefox',
-    'c': 'chromium-browser',
+    'c': 'chromium',
 }[char]
 subprocess.Popen(['nohup', executable, url],
          stdout=subprocess.PIPE,
