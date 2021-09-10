@@ -7,7 +7,7 @@ browsers = {
     'w': ('Firefox (work)', ['firefox', '-P', 'work', '{url}']),
 }
 
-url = sys.argv[1]
+url = sys.argv[1] if len(sys.argv) > 1 else ''
 print(url)
 print('Choose which browser you want to use for this link:')
 for key, (name, _) in browsers.items():
