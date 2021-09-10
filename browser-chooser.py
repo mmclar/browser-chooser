@@ -2,6 +2,8 @@ import sys
 import readchar
 import subprocess
 
+ESC = 27
+
 browsers = {
     'p': ('Firefox (personal)', ['firefox', '-P', 'mmclar', '{url}']),
     'w': ('Firefox (work)', ['firefox', '-P', 'work', '{url}']),
@@ -15,11 +17,14 @@ for key, (name, _) in browsers.items():
 
 while True:
     try:
-        _, params = browsers[readchar.readchar()]
-        subprocess.Popen(['nohup'] + [p.format(url=url) for p in params],
+        _, params = browsers[(c := readchar.readchar())]
+        subprocess.Popen(['nohup'] + [formatted for p in params if (formatted := p.format(url=url))],
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT
         )
         break
-    except:
+    except KeyError:
+        if ord(c) in (ESC,):
+            print('Exiting')
+            sys.exit(0)
         print(f'Invalid choice. Please choose one of [{", ".join(browsers.keys())}]')
