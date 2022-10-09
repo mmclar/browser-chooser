@@ -7,6 +7,7 @@ ESC = 27
 browsers = {
     'p': ('Firefox (personal)', ['firefox', '-P', 'mmclar', '{url}']),
     'w': ('Firefox (work)', ['firefox', '-P', 'work', '{url}']),
+    'c': ('Chrome', ['google-chrome', '{url}']),
 }
 
 url = sys.argv[1] if len(sys.argv) > 1 else ''
